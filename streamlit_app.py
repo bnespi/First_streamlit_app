@@ -15,7 +15,7 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
-if len(fruits_to_show)>0:
+if fruits_to_show.shape[0]>0:
   streamlit.dataframe(fruits_to_show)
 else:
   streamlit.dataframe(my_fruit_list)
