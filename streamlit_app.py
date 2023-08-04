@@ -26,7 +26,7 @@ else:
 #New Section to display fruityvice api response
 streamlit.header("Fruityvice Fruit Advice!")
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/kiwi")
 streamlit.text(fruityvice_response.json())
 
 # normalize the received json
