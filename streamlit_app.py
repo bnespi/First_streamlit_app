@@ -26,10 +26,10 @@ else:
 #New Section to display fruityvice api response
 streamlit.header("Fruityvice Fruit Advice!")
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/")
 streamlit.text(fruityvice_response.json())
 
 # normalize the received json
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json()).iloc[0:10]
 # display the normalized data
 streamlit.dataframe(fruityvice_normalized)
